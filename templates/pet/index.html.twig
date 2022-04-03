@@ -20,7 +20,10 @@
 						<img src="{{asset('images/'~ p.image)}}">
 					</div>
 					<div class="col-auto">
-						Name :{{ p.nom }}
+						Name :
+						<a href="{{path('app_display',{'id': p.id})}}">
+							{{ p.nom }}
+						</a>
 						<br>
 						Description :{{ p.description }}
 					</div>

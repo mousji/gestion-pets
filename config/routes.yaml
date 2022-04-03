@@ -5,6 +5,11 @@ app_pet:
 
 
 
+app_display:
+    path: /display/{id}
+    controller: App\Controller\PetController::display
+
+
 
 
   

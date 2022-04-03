@@ -20,4 +20,17 @@ class PetController extends AbstractController
             "pet" => $pet
         ]);
     }
+
+    #[Route('/display/{id}', name: 'app_display')]
+    public function display(Pet $p)
+    {
+
+
+
+
+
+        return $this->render('pet/display.html.twig', [
+            "p" => $p
+        ]);
+    }
 }
