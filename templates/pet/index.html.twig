@@ -13,12 +13,13 @@
 
 	{% for p in pet  %}
 
-		<div class="bloc-pets d-flex justify-content-center ">
+		<div class="bloc-pets">
 			<div class="container ">
 				<div class="row align-items-center justify-content-center">
 					<div class="col-2">
 						<img src="{{asset('images/'~ p.image)}}">
 					</div>
+					<br>
 					<div class="col-auto">
 						Name :
 						<a href="{{path('app_display',{'id': p.id})}}">
@@ -26,14 +27,22 @@
 						</a>
 						<br>
 						Description :{{ p.description }}
-					</div>
+						<br>
+						Family :{{ p.family.lib }}
+						<br>
+						Continent :
+						{% for Contine in p.continents %}
+							<a href="#" class="btn btn-warning">
+								{{  Contine.lib }}
+							</a>
 
+						{% endfor %}
+					</div>
 
 				</div>
 			</div>
-		</div>
 
-	{% endfor %}
+		{% endfor %}
 
 
-{% endblock %}
+	{% endblock %}

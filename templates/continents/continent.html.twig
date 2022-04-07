@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	List Continents
+{% endblock %}
+
+
+{% block body %}
+	{% include "pet/menu.html.twig" %}
+	<h1 class="border border-dark rounded p-2 m-2 text-white bg-primary center">
+		{% block mytitle %}welcome to List Continents
+		{% endblock %}
+	</h1>
+	{% for c in  continent %}
+
+		<div class="border-bottom border-warning">
+			{{ c.lib }}
+		</div>
+
+	{% endfor %}
+
+{% endblock %}

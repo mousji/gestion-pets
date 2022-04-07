@@ -10,6 +10,18 @@ app_display:
     controller: App\Controller\PetController::display
 
 
+app_family:
+    path: /family
+    controller: App\Controller\FamilyController::index
 
+
+
+
+app_continents:
+    path: /continents
+    controller: App\Controller\ContinentsController::displayListContinents
+
+
+  
 
   
