@@ -3,7 +3,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\Continent;
+use App\Entity\Dispose;
 use App\Entity\Family;
+use App\Entity\Personne;
 use App\Entity\Pet;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -12,6 +14,24 @@ class PetsFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
+
+        $person1 = new Personne();
+        $person1->setNom("med ousji");
+        $manager->persist($person1);
+
+
+        $person2 = new Personne();
+        $person2->setNom("Ahmed hammami");
+        $manager->persist($person2);
+
+
+
+        $person3 = new Personne();
+        $person3->setNom("salma mejri");
+        $manager->persist($person3);
+
+
+
 
 
         $c1 = new  Continent();
@@ -114,6 +134,35 @@ class PetsFixtures extends Fixture
 
         // $product = new Product();
         // $manager->persist($product);
+
+        $d1 = new Dispose();
+        $d1->setPersonne($person1);
+        $d1->setPet($p3);
+        $d1->setNb(50);
+
+        $manager->persist($d1);
+
+
+        $d2 = new Dispose();
+        $d2->setPersonne($person2);
+        $d2->setPet($p2);
+        $d2->setNb(10);
+
+        $manager->persist($d2);
+
+
+        
+        $d3 = new Dispose();
+        $d3->setPersonne($person3);
+        $d3->setPet($p1);
+        $d3->setNb(40);
+
+        $manager->persist($d3);
+
+
+        
+        
+        
 
         $manager->flush();
     }

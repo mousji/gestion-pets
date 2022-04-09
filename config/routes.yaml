@@ -23,5 +23,17 @@ app_continents:
 
 
   
+  
+
+app_personne:
+    path: /personne
+    controller: App\Controller\PersonneController::personne
+
+
+
+
+app_details_personne:
+    path: /personne/{id}
+    controller: App\Controller\PersonneController::detailspersonne
 
   

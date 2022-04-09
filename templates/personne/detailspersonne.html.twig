@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Details of person
+{% endblock %}
+
+{% block body %}
+	{% include "pet/menu.html.twig" %}
+
+	<h1 class="border border-dark rounded p-2 m-2 text-white bg-primary center">
+		{% block mytitle %}
+			Details
+			{{ personne.nom }}
+
+
+		{% endblock %}
+	</h1>
+	<div>
+		Name:
+		{{ personne.nom }}</div>
+
+
+	List of pets :
+	<br>
+	{% for  dispose  in personne.disposes %}
+
+
+		Pet:
+		<div class="btn btn-warning">
+			{{ dispose.pet.nom }}</div>
+		Nbre:
+		<div class="btn btn-warning">
+			{{ dispose.nb }}</div>
+
+	{% endfor %}
+
+
+{% endblock %}

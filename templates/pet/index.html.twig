@@ -37,12 +37,29 @@
 							</a>
 
 						{% endfor %}
+						<br>
+						<br>
+						Personne :
+						{% for dispose in p.disposes %}
+
+
+							<a href="#" class="btn btn-info">
+								{{ dispose.personne.nom }}
+							</a>
+							<div class="btn btn-secondary">
+								{{ dispose.nb }}
+							</div>
+
+
+						{% endfor %}
+
+
 					</div>
 
+					<div></div>
 				</div>
-			</div>
 
-		{% endfor %}
+			{% endfor %}
 
 
-	{% endblock %}
+		{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	List of person
+{% endblock %}
+
+{% block body %}
+	{% include "pet/menu.html.twig" %}
+
+	<h1 class="border border-dark rounded p-2 m-2 text-white bg-primary center">
+		{% block mytitle %}
+			List of person
+
+
+		{% endblock %}
+	</h1>
+
+
+	{% for  pr  in personne %}
+		<div class="border-bottom border-primary">
+			<a href="{{path('app_details_personne', {'id':pr.id})}}">
+				{{ pr.nom }}
+			</a>
+		</div>
+
+		List of pets :
+		{% for  dispose  in pr.disposes %}
+
+			{{ dispose.pet.nom }}
+
+		{% endfor %}
+
+
+	{% endfor %}
+{% endblock %}
